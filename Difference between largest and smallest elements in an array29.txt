@@ -1,0 +1,29 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter length");
+		int len = scan.nextInt();
+		if (len >= 1) {
+			int Array[] = new int[len];
+			for (int i = 0; i < len; i++)
+				Array[i] = scan.nextInt();
+			getBigDiff(Array);
+		}
+		scan.close();
+	}
+}
+class UserMainCode{
+	static int getBigDiff(int[] array) {
+		Arrays.sort(array);
+		int n = array[array.length - 1] - array[0];
+		int b = array.length;
+		if (b == 1) {
+			n = array[0];
+		}
+		System.out.println(n);
+		return n;
+	}
+}

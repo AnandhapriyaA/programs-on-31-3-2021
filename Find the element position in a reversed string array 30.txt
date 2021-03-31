@@ -1,0 +1,31 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter length");
+		int len = scan.nextInt();
+		System.out.println("enter string array");
+		String Array[] = new String[len + 1];
+		for (int i = 0; i <= len; i++)
+			Array[i] = scan.nextLine();
+		System.out.println("enter element");
+		String element = scan.nextLine();
+		getElementPosition(Array, element);
+		scan.close();
+	}
+}
+class UserMainCode{
+	static int getElementPosition(String[] array, String element) {
+		Arrays.sort(array);
+		int index = 0;
+		for (int i = 0; i < array.length - 1; i++) {
+			if (array[i].equals(element)) {
+				index = i;
+			}
+		}
+		System.out.println(index - 1);
+		return index-1;
+	}
+}

@@ -1,0 +1,24 @@
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+public class mains extends UserMainCode {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("enter string1");
+		String str1 = scan.nextLine();
+		removeDuplicates(str1);
+		scan.close();
+	}
+}
+class UserMainCode{
+	static String removeDuplicates(String string1) {
+		String result = "";
+		LinkedHashSet<Character> set = new LinkedHashSet<>();
+		for (int i = 0; i < string1.length(); i++)
+			set.add(string1.charAt(i));
+		for (Character ch : set)
+			result += ch;
+		System.out.print(result);
+		return result;
+	}
+}
